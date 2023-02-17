@@ -10,7 +10,7 @@ const form = document.querySelector('form');
 let restartButton = document.createElement('button');
 restartButton.textContent = 'Restart';
 
-let attempt = 0;
+let attempt = 1;
 
 restartButton.addEventListener('click', () => {
     guessField.value = '';

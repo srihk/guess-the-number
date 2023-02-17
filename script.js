@@ -7,17 +7,16 @@ const guesses = document.querySelector('.guesses');
 const guessSubmit = document.querySelector('.guessSubmit');
 const resultParas = document.querySelector('.resultParas');
 const form = document.querySelector('form');
-let restartButton = document.createElement('button');
-restartButton.textContent = 'Restart';
 
 let attempt = 1;
 
-restartButton.addEventListener('click', () => {
-    guessField.value = '';
-    location.reload();
-});
-
 function end() {
+    const restartButton = document.createElement('button');
+    restartButton.textContent = 'Restart';
+    restartButton.addEventListener('click', () => {
+        guessField.value = '';
+        location.reload();
+    });
     resultParas.appendChild(restartButton);
     guessField.setAttribute('disabled', true);
     guessSubmit.setAttribute('disabled', true);

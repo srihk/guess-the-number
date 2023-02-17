@@ -7,4 +7,5 @@ body {
     font-family: 'JetBrains Mono', monospace;
     max-width: 50em;
     margin: auto;
+    padding: 1em;
 }

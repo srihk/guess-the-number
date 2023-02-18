@@ -24,6 +24,17 @@ function end() {
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
+    const guess = guessField.value;
+
+    if (guess == key) {
+        guesses.append(` ${guess}`);
+        lastResult.textContent = `Congrats! The key is ${key}. You are free.`;
+        lastResult.style.background = "rgba(0, 200, 0, 0.2)";
+        lowOrHi.textContent = '';
+        end();
+        return;
+    }
+    
     if (attempt == 10) {
         lastResult.textContent = "Sorry, You are locked!";
         end();
@@ -35,16 +46,6 @@ form.addEventListener('submit', (event) => {
     }
 
     ++attempt;
-    const guess = guessField.value;
-
-    if (guess == key) {
-        guesses.append(` ${guess}`);
-        lastResult.textContent = `Congrats! The key is ${key}. You are free.`;
-        lastResult.style.background = "rgba(0, 200, 0, 0.2)";
-        lowOrHi.textContent = '';
-        end();
-        return;
-    }
 
     guesses.append(` ${guess}`);
     lowOrHi.style.background = "rgba(200, 0, 0, 0.2)";
